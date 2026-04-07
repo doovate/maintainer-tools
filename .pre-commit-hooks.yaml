@@ -3,3 +3,4 @@
   entry: dv-fix-manifest-website
   pass_filenames: true
   language: python
+  files: (__manifest__\.py)$
