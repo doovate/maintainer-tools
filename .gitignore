@@ -1,0 +1,22 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# === IDEs (PyCharm, VS Code) ===
+.idea/
+.vscode/
+*.swp
+*.pnp
+.DS_Store
+
+# === Odoo docker environment === #
+odoo-docker/
+/docker-*/
+
+.ruff_cache/

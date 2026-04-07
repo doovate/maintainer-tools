@@ -1,0 +1,5 @@
+- id: dv-fix-manifest-website
+  name: Fix the manifest website key
+  entry: dv-fix-manifest-website
+  pass_filenames: true
+  language: python
