@@ -9,16 +9,14 @@ WEBSITE_KEY_RE = re.compile(r"""(["']website["']\s*:\s*["'])([^"']*)(["'])""")
 
 @click.command()
 @click.argument("url", required=True)
-@click.argument("manifest_files", required=True, nargs=-1, type=click.Path())
+@click.argument("manifest_files", nargs=-1, type=click.Path())
 def main(url, manifest_files):
     for file in manifest_files:
         try:
             with open(file) as manifest_file:
                 parse_manifest(manifest_file.read())
         except Exception:
-            raise click.ClickException(
-                "Error parsing manifest {}.".format(file)
-            )
+            raise click.ClickException("Error parsing manifest {}.".format(file))
         with open(file) as manifest_file:
             manifest_str = manifest_file.read()
         new_manifest_str, n = WEBSITE_KEY_RE.subn(
