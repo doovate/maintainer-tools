@@ -6,9 +6,7 @@ import re
 import click
 
 ADDON_FILTER = re.compile(r"^(ps_|dv_)")
-_DATA_DIR = (
-    Path(__file__).parent.parent / "data" / "template_addon" / "static" / "description"
-)
+_DATA_DIR = Path(__file__).parent / "template_addon_static" / "description"
 TEMPLATE_INDEX = str(_DATA_DIR / "index.html")
 TEMPLATE_HERO = str(_DATA_DIR / "assets" / "doovate_hero.jpg")
 TEMPLATE_FULL_LOGO = str(_DATA_DIR / "assets" / "doovate_full_logo.png")
