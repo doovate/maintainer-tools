@@ -5,26 +5,28 @@ import re
 
 import click
 
-WEBSITE_KEY_RE = re.compile(r"""(["']website["']\s*:\s*["'])([^"']*)(["'])""")
 ADDON_FILTER = re.compile(r"^(ps_|dv_)")
-TEMPLATE_INDEX = os.path.join("..", "data", "template_addon", "static", "description", "index.html")
-TEMPLATE_HERO = os.path.join("..", "data", "template_addon", "static", "description", "assets", "doovate_hero.jpg")
-TEMPLATE_FULL_LOGO = os.path.join("..", "data", "template_addon", "static", "description", "assets",
-                                  "doovate_full_logo.png")
-TEMPLATE_ICON = os.path.join("..", "data", "template_addon", "static", "description", "icon.png")
+_DATA_DIR = (
+    Path(__file__).parent.parent / "data" / "template_addon" / "static" / "description"
+)
+TEMPLATE_INDEX = str(_DATA_DIR / "index.html")
+TEMPLATE_HERO = str(_DATA_DIR / "assets" / "doovate_hero.jpg")
+TEMPLATE_FULL_LOGO = str(_DATA_DIR / "assets" / "doovate_full_logo.png")
+TEMPLATE_ICON = str(_DATA_DIR / "icon.png")
 
 INDEX_FIRST_LINE = "<!--doovate index.html template-->"
 
 
 @click.command()
 def main():
-    template_hash = hash(open(TEMPLATE_INDEX, 'r').read())
+    # Calculate template hash, this is used to check if the template has been updated
+    template_hash = hash(open(TEMPLATE_INDEX, "r").read())
+
     # List folders in current directory and extract valid addons
-    filtered_addons = [folder for folder in os.listdir(".") if ADDON_FILTER.match(folder)]
-
-
+    filtered_addons = [
+        folder for folder in os.listdir(".") if ADDON_FILTER.match(folder)
+    ]
     for addon in filtered_addons:
-        base_website = False
         # Create missing folder
         index_file = os.path.join(addon, "static", "description", "index.html")
         icon_file = os.path.join(addon, "static", "description", "icon.png")
@@ -41,7 +43,7 @@ def main():
         if os.path.exists(index_file):
             with open(index_file, "r") as f:
                 lines = f.readlines()
-            if INDEX_FIRST_LINE in lines[0] and hash(''.join(lines)) != template_hash:
+            if INDEX_FIRST_LINE in lines[0] and hash("".join(lines)) != template_hash:
                 print(f"Updating index.html for {addon}")
                 copyfile(TEMPLATE_INDEX, index_file)
         if not os.path.exists(asset_folder):
