@@ -4,3 +4,11 @@
   pass_filenames: true
   language: python
   files: (__manifest__\.py)$
+  always_run: true
+
+- id: dv-fix-base-addon-index
+  name: Create base index.html and icon.png
+  entry: dv-fix-base-addon-index
+  pass_filenames: false
+  language: python
+  always_run: true
