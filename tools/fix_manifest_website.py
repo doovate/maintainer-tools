@@ -8,8 +8,8 @@ WEBSITE_KEY_RE = re.compile(r"""(["']website["']\s*:\s*["'])([^"']*)(["'])""")
 
 
 @click.command()
-@click.argument("url")
-@click.argument("manifest_files", nargs=-1, type=click.Path())
+@click.argument("url", required=True)
+@click.argument("manifest_files", required=True, nargs=-1, type=click.Path())
 def main(url, manifest_files):
     for file in manifest_files:
         try:
