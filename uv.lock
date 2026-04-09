@@ -542,6 +542,71 @@ wheels = [
 ]
 
 [[package]]
+name = "doovate-maintainers-tools"
+source = { editable = "." }
+dependencies = [
+    { name = "appdirs" },
+    { name = "click", version = "8.1.8", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
+    { name = "click", version = "8.3.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
+    { name = "docutils", version = "0.20.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
+    { name = "docutils", version = "0.22.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
+    { name = "erppeek" },
+    { name = "freezegun" },
+    { name = "github3-py" },
+    { name = "jinja2" },
+    { name = "manifestoo-core" },
+    { name = "polib" },
+    { name = "pygments", version = "2.19.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
+    { name = "pygments", version = "2.20.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
+    { name = "pypandoc" },
+    { name = "pyproject-dependencies" },
+    { name = "pyyaml" },
+    { name = "requests", version = "2.32.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
+    { name = "requests", version = "2.32.5", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*'" },
+    { name = "requests", version = "2.33.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
+    { name = "selenium", version = "4.27.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
+    { name = "selenium", version = "4.36.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*'" },
+    { name = "selenium", version = "4.41.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
+    { name = "setuptools-odoo" },
+    { name = "toml" },
+    { name = "tomli", marker = "python_full_version < '3.11'" },
+    { name = "towncrier", version = "24.8.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
+    { name = "towncrier", version = "25.8.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
+    { name = "twine", version = "6.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
+    { name = "twine", version = "6.2.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
+    { name = "wheel", version = "0.45.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
+    { name = "wheel", version = "0.46.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
+    { name = "whool" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "appdirs" },
+    { name = "click" },
+    { name = "docutils" },
+    { name = "erppeek" },
+    { name = "freezegun" },
+    { name = "github3-py", specifier = ">=1" },
+    { name = "jinja2" },
+    { name = "manifestoo-core", specifier = ">=1.1" },
+    { name = "polib" },
+    { name = "pygments" },
+    { name = "pypandoc" },
+    { name = "pyproject-dependencies", marker = "python_full_version >= '3.7'" },
+    { name = "pyyaml" },
+    { name = "requests" },
+    { name = "selenium" },
+    { name = "setuptools-odoo" },
+    { name = "toml", specifier = ">=0.10.0" },
+    { name = "tomli", marker = "python_full_version < '3.11'" },
+    { name = "towncrier", marker = "python_full_version < '3.8'", specifier = ">=21.3" },
+    { name = "towncrier", marker = "python_full_version >= '3.8'", specifier = ">=23.11" },
+    { name = "twine" },
+    { name = "wheel" },
+    { name = "whool" },
+]
+
+[[package]]
 name = "erppeek"
 version = "1.7.2"
 source = { registry = "https://pypi.org/simple" }
@@ -1160,71 +1225,6 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/51/39/49f737907e6ab2b4ca71855d3bd63dd7958862e9c8b94fb4e5b18ccf6988/nh3-0.3.4-cp38-abi3-win32.whl", hash = "sha256:72e4e9ca1c4bd41b4a28b0190edc2e21e3f71496acd36a0162858e1a28db3d7e", size = 609542, upload-time = "2026-03-25T10:57:27.112Z" },
     { url = "https://files.pythonhosted.org/packages/73/4f/af8e9071d7464575a7316831938237ffc9d92d27f163dbdd964b1309cd9b/nh3-0.3.4-cp38-abi3-win_amd64.whl", hash = "sha256:c10b1f0c741e257a5cb2978d6bac86e7c784ab20572724b20c6402c2e24bce75", size = 624244, upload-time = "2026-03-25T10:57:28.302Z" },
     { url = "https://files.pythonhosted.org/packages/44/0c/37695d6b0168f6714b5c492331636a9e6123d6ec22d25876c68d06eab1b8/nh3-0.3.4-cp38-abi3-win_arm64.whl", hash = "sha256:43ad4eedee7e049b9069bc015b7b095d320ed6d167ecec111f877de1540656e9", size = 616649, upload-time = "2026-03-25T10:57:29.623Z" },
-]
-
-[[package]]
-name = "oca-maintainers-tools"
-source = { editable = "." }
-dependencies = [
-    { name = "appdirs" },
-    { name = "click", version = "8.1.8", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
-    { name = "click", version = "8.3.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
-    { name = "docutils", version = "0.20.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
-    { name = "docutils", version = "0.22.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
-    { name = "erppeek" },
-    { name = "freezegun" },
-    { name = "github3-py" },
-    { name = "jinja2" },
-    { name = "manifestoo-core" },
-    { name = "polib" },
-    { name = "pygments", version = "2.19.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
-    { name = "pygments", version = "2.20.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
-    { name = "pypandoc" },
-    { name = "pyproject-dependencies" },
-    { name = "pyyaml" },
-    { name = "requests", version = "2.32.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
-    { name = "requests", version = "2.32.5", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*'" },
-    { name = "requests", version = "2.33.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
-    { name = "selenium", version = "4.27.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
-    { name = "selenium", version = "4.36.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*'" },
-    { name = "selenium", version = "4.41.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
-    { name = "setuptools-odoo" },
-    { name = "toml" },
-    { name = "tomli", marker = "python_full_version < '3.11'" },
-    { name = "towncrier", version = "24.8.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
-    { name = "towncrier", version = "25.8.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
-    { name = "twine", version = "6.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
-    { name = "twine", version = "6.2.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
-    { name = "wheel", version = "0.45.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
-    { name = "wheel", version = "0.46.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
-    { name = "whool" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "appdirs" },
-    { name = "click" },
-    { name = "docutils" },
-    { name = "erppeek" },
-    { name = "freezegun" },
-    { name = "github3-py", specifier = ">=1" },
-    { name = "jinja2" },
-    { name = "manifestoo-core", specifier = ">=1.1" },
-    { name = "polib" },
-    { name = "pygments" },
-    { name = "pypandoc" },
-    { name = "pyproject-dependencies", marker = "python_full_version >= '3.7'" },
-    { name = "pyyaml" },
-    { name = "requests" },
-    { name = "selenium" },
-    { name = "setuptools-odoo" },
-    { name = "toml", specifier = ">=0.10.0" },
-    { name = "tomli", marker = "python_full_version < '3.11'" },
-    { name = "towncrier", marker = "python_full_version < '3.8'", specifier = ">=21.3" },
-    { name = "towncrier", marker = "python_full_version >= '3.8'", specifier = ">=23.11" },
-    { name = "twine" },
-    { name = "wheel" },
-    { name = "whool" },
 ]
 
 [[package]]
