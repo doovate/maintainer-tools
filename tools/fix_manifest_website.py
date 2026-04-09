@@ -1,9 +1,8 @@
-import os
 import re
 
 import click
 
-from .manifest import get_manifest_path, parse_manifest
+from .manifest import parse_manifest
 
 WEBSITE_KEY_RE = re.compile(r"""(["']website["']\s*:\s*["'])([^"']*)(["'])""")
 
