@@ -1,0 +1,13 @@
+name: Run pre-commit checks
+
+on:
+  pull_request:
+    branches:
+      - "**"
+  push:
+    branches:
+      - "**"
+
+jobs:
+  pre-commit:
+    uses: doovate/shared-workflows/.github/workflows/pre-commit.yml@main
